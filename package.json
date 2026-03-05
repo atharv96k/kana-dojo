@@ -24,6 +24,7 @@
     "generate:constants": "tsx scripts/generateConstants.ts",
     "anki:convert": "tsx scripts/anki-converter.ts",
     "images:process": "tsx scripts/process-wallpapers.ts",
+    "sounds:import:monkeytype": "node scripts/import-monkeytype-sounds.mjs",
     "seo:check": "tsx scripts/seo-health-check.ts",
     "seo:check:live": "tsx scripts/seo-health-check.ts --live",
     "analyze": "ANALYZE=true npm run build",

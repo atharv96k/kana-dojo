@@ -4,8 +4,10 @@ import usePreferencesStore from '@/features/Preferences/store/usePreferencesStor
 import { buttonBorderStyles } from '@/shared/lib/styles';
 import { useHasFinePointer } from '@/shared/hooks/useHasFinePointer';
 import { EFFECTS, CLICK_EFFECTS } from '../../data/effects/effectsData';
+import { CLICK_SOUND_OPTIONS } from '../../data/audio/clickSounds';
 import CollapsibleSection from '../shared/CollapsibleSection';
-import { MousePointer2, Zap } from 'lucide-react';
+import { MousePointer2, Volume2, Zap } from 'lucide-react';
+import { useClick } from '@/shared/hooks/useAudio';
 
 function EffectCard({
   name,
@@ -55,10 +57,13 @@ function EffectCard({
 
 const Effects = () => {
   const hasFinePointer = useHasFinePointer();
+  const { playClickById } = useClick();
   const cursorTrailEffect = usePreferencesStore(s => s.cursorTrailEffect);
   const setCursorTrailEffect = usePreferencesStore(s => s.setCursorTrailEffect);
   const clickEffect = usePreferencesStore(s => s.clickEffect);
   const setClickEffect = usePreferencesStore(s => s.setClickEffect);
+  const clickSoundId = usePreferencesStore(s => s.clickSoundId);
+  const setClickSoundId = usePreferencesStore(s => s.setClickSoundId);
 
   return (
     <div className='flex flex-col gap-6'>
@@ -103,6 +108,43 @@ const Effects = () => {
               group='click'
             />
           ))}
+        </fieldset>
+      </CollapsibleSection>
+
+      <CollapsibleSection
+        title='Click Sounds'
+        icon={<Volume2 size={18} />}
+        level='subsubsection'
+        defaultOpen={true}
+        storageKey='prefs-effects-click-sounds'
+      >
+        <fieldset className='grid grid-cols-2 gap-3 p-1 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5'>
+          {CLICK_SOUND_OPTIONS.map(option => {
+            const isSelected = clickSoundId === option.id;
+            return (
+              <button
+                key={option.id}
+                type='button'
+                className={clsx(
+                  buttonBorderStyles,
+                  'rounded-3xl border-1 border-(--card-color) px-3 py-2 text-left text-sm capitalize',
+                )}
+                style={{
+                  backgroundColor: isSelected
+                    ? 'var(--secondary-color)'
+                    : undefined,
+                  color: isSelected ? 'var(--background-color)' : undefined,
+                  transition: 'background-color 275ms, color 275ms',
+                }}
+                onClick={() => {
+                  setClickSoundId(option.id);
+                  playClickById(option.id);
+                }}
+              >
+                {option.label}
+              </button>
+            );
+          })}
         </fieldset>
       </CollapsibleSection>
     </div>
