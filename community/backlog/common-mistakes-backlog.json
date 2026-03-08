@@ -628,7 +628,7 @@
     "correct": "この漢字の読み方は難しいです。",
     "explanation": "Prefer noun linkage with の. (Pattern set 4)",
     "id": 79,
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
