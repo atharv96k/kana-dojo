@@ -97,7 +97,7 @@
     "character": "Hero / party lines",
     "id": 10,
     "issued": false,
-    "completed": false
+    "completed": true
   },
   {
     "japanese": "ここからが本番だ",
@@ -107,7 +107,7 @@
     "character": "Guild Handler lines",
     "id": 11,
     "issued": false,
-    "completed": false
+    "completed": true
   },
   {
     "japanese": "次はもっと強くなる",
@@ -321,7 +321,7 @@
     "character": "Rival characters",
     "id": 32,
     "issued": false,
-    "completed": false
+    "completed": true
   },
   {
     "japanese": "運命なんて、変えてみせる！",
@@ -331,7 +331,7 @@
     "character": "Class Zero",
     "id": 33,
     "issued": false,
-    "completed": false
+    "completed": true
   },
   {
     "japanese": "生きるってのは、戦うってことだ",
@@ -381,7 +381,7 @@
     "character": "Revali",
     "id": 38,
     "issued": false,
-    "completed": false
+    "completed": true
   },
   {
     "japanese": "俺たちの物語は、ここからだ",
@@ -390,7 +390,7 @@
     "game": "Tales series",
     "character": "Various endings",
     "id": 39,
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -1091,7 +1091,7 @@
     "character": "Ryu",
     "id": 109,
     "issued": false,
-    "completed": false
+    "completed": true
   },
   {
     "japanese": "冒険の始まりだ！",
@@ -1101,7 +1101,7 @@
     "character": "Hero / party lines",
     "id": 110,
     "issued": false,
-    "completed": false
+    "completed": true
   },
   {
     "japanese": "ここからが本番だ",
@@ -1121,7 +1121,7 @@
     "character": "Rival characters",
     "id": 112,
     "issued": false,
-    "completed": false
+    "completed": true
   },
   {
     "japanese": "運命なんて、変えてみせる！",
