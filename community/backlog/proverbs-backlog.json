@@ -1296,7 +1296,7 @@
     "romaji": "Kaeru no ko wa kaeru",
     "english": "A frog's child is a frog",
     "meaning": "Children resemble their parents",
-    "completed": false,
+    "completed": true,
     "issued": false
   },
   {
@@ -1306,7 +1306,7 @@
     "english": "A cane before falling",
     "meaning": "Prevention is better than cure",
     "completed": false,
-    "issued": false
+    "issued": true
   },
   {
     "id": 146,
