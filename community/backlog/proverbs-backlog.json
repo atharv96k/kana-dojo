@@ -457,7 +457,7 @@
     "romaji": "Nido aru koto wa sando aru",
     "english": "What happens twice will happen a third time",
     "meaning": "Patterns tend to repeat",
-    "completed": false,
+    "completed": true,
     "issued": false
   },
   {
@@ -467,7 +467,7 @@
     "english": "Fate is strange yet delightful",
     "meaning": "Chance connections can be surprisingly good",
     "issued": false,
-    "completed": false
+    "completed": true
   },
   {
     "id": 53,
@@ -476,7 +476,7 @@
     "english": "Stomach 80 percent full",
     "meaning": "Eat in moderation",
     "completed": false,
-    "issued": false
+    "issued": true
   },
   {
     "id": 54,
