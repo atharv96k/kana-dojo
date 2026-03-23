@@ -493,7 +493,7 @@
     "romaji": "Inu mo arukeba bou ni ataru",
     "english": "Even a walking dog will hit a stick",
     "meaning": "Acting can lead to luck (or trouble)",
-    "completed": false,
+    "completed": true,
     "issued": false
   },
   {
@@ -502,7 +502,7 @@
     "romaji": "Tana kara botamochi",
     "english": "A rice cake falls from the shelf",
     "meaning": "A windfall; unexpected good luck",
-    "completed": false,
+    "completed": true,
     "issued": false
   },
   {
@@ -539,7 +539,7 @@
     "english": "Among flowers, the cherry blossom; among men, the warrior",
     "meaning": "The best of each kind",
     "completed": false,
-    "issued": false
+    "issued": true
   },
   {
     "id": 61,
@@ -871,7 +871,7 @@
     "romaji": "Saru mo ki kara ochiru",
     "english": "Even monkeys fall from trees",
     "meaning": "Experts also make mistakes",
-    "completed": false,
+    "completed": true,
     "issued": false
   },
   {
