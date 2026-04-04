@@ -1,11 +1,12 @@
 'use client';
 
-import { useEffect } from 'react';
+import { useEffect, useMemo } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
 import confetti from 'canvas-confetti';
 import { Star } from 'lucide-react';
 import { useHasFinePointer } from '@/shared/hooks/generic/useHasFinePointer';
 import { cn } from '@/shared/lib/utils';
+import { getRandomMilestoneMessage } from '@/shared/lib/game/streakMilestones';
 
 interface StreakMilestoneOverlayProps {
   milestone: number | null;
@@ -62,6 +63,11 @@ export default function StreakMilestoneOverlay({
   onDismiss,
 }: StreakMilestoneOverlayProps) {
   const hasFinePointer = useHasFinePointer();
+  const message = useMemo(() => {
+    if (!milestone) return '';
+
+    return getRandomMilestoneMessage(milestone);
+  }, [milestone]);
 
   useEffect(() => {
     if (!milestone) return;
@@ -139,17 +145,17 @@ export default function StreakMilestoneOverlay({
             variants={contentVariants}
             initial='hidden'
             animate='visible'
-            className='mx-auto flex w-full max-w-4xl flex-col items-center gap-6 px-6 text-center select-none'
+            className='mx-auto flex w-full max-w-4xl flex-col items-center gap-5 px-6 text-center select-none'
           >
-            <motion.div
+            <motion.button
               variants={itemVariants}
               className={cn(
                 'inline-flex h-24 w-24 items-center justify-center rounded-4xl border-b-16 border-(--secondary-color-accent) bg-(--secondary-color) text-(--background-color) transition-all duration-200',
-                'motion-safe:animate-float [--float-distance:-5px]',
+                'motion-safe:animate-float [--float-distance:-6px]',
               )}
             >
               <Star className='h-14 w-14' strokeWidth={2.5} />
-            </motion.div>
+            </motion.button>
 
             <motion.h2
               variants={itemVariants}
@@ -158,12 +164,12 @@ export default function StreakMilestoneOverlay({
               {milestone} in a row!
             </motion.h2>
 
-            {/* <motion.p
+            <motion.p
               variants={itemVariants}
               className='max-w-2xl text-xl font-semibold text-(--secondary-color) sm:text-2xl'
             >
               + {message}
-            </motion.p> */}
+            </motion.p>
 
             <motion.p
               variants={itemVariants}
