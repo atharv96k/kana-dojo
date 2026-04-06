@@ -4,6 +4,8 @@ import { memo } from 'react';
 import { motion } from 'framer-motion';
 import { cn } from '@/shared/lib/utils';
 
+const useButtonStyle = false;
+
 interface FloatingKanjiProps {
   char: string;
   color: string;
@@ -39,7 +41,8 @@ const FloatingKanji = memo(
     }[size];
 
     return (
-      <motion.span
+      <motion.button
+        type='button'
         variants={kanjiVariants}
         initial='hidden'
         animate={{
@@ -59,19 +62,22 @@ const FloatingKanji = memo(
           sizeClass,
           fontClass,
           'motion-safe:animate-float',
+          useButtonStyle &&
+            'h-16 w-16 rounded-4xl border-b-8 border-(--secondary-color-accent) text-(--background-color)',
         )}
         aria-hidden='true'
         style={{
-          color: color,
+          color: useButtonStyle ? 'var(--background-color)' : color,
+          backgroundColor: useButtonStyle ? color : undefined,
           zIndex: -10,
           transform: 'translate(-50%, -50%)', // Center the character on the position
           animationDelay: `${delay}s`,
           // @ts-expect-error - CSS variable for float animation
-          '--float-distance': '-6px',
+          '--float-distance': '-12px',
         }}
       >
-        {char}
-      </motion.span>
+        {useButtonStyle ? <span className='text-(--background-color)'>{char}</span> : char}
+      </motion.button>
     );
   },
 );
